@@ -1,0 +1,105 @@
+//Herencia en JS
+
+class Persona{
+
+    static contadorPersonas = 0; //atributo de nuestra clase
+
+
+    static get MAX_OBJ(){
+        return 5
+    }
+
+    constructor(nombre,apellido){
+        this._nombre = nombre; //Se debe agregar un _ al inico de la propiedad para poder usar get/set
+        this._apellido = apellido;
+
+        if(Persona.contadorPersonas < Persona.MAX_OBJ){
+            this.idPersona = ++Persona.contadorPersonas
+        }else{
+            console.log('Se han superado el maximon de objetos permitidos')
+             this.idPersona = null; //No se asigna el id
+        }
+        //this.idPersona = ++Persona.contadorPersonas;
+    }
+
+    get nombre(){
+        return this._nombre
+    }
+
+    set nombre(nombre){
+        this._nombre = nombre
+    }
+
+    get apellido(){
+        return this._apellido
+    }
+
+    set apellido(apellido){
+        this._apellido = apellido
+    }
+
+    nombreCompleto(){
+        return this.idPersona + ' ' + this._nombre + ' ' + this._apellido;
+    }
+
+    toString(){
+        return this.nombreCompleto()
+    }
+
+    static saludar(){
+        console.log('saludos desde metodo static')
+    }
+
+    static saludar2(persona){
+        console.log(persona.nombre + ' ' + persona.apellido)
+    }
+}
+
+
+
+class Empleado extends Persona{
+    constructor(nombre,apellido,departamento){
+        super(nombre,apellido); //Llamar al constructor de la clase padre
+        this._departamento = departamento;
+    }
+
+    get departamento(){
+        return this._departamento;
+    }
+
+    set departamento(departamento){
+        this._departamento = departamento;
+    }
+
+    //Sobreescritura
+    nombreCompleto(){
+       // return this._nombre + ' ' + this._apellido + ' , ' + this._departamento;
+       return super.nombreCompleto() + ' , ' + this._departamento; /* Usando super */
+    }
+}
+
+
+
+
+let persona1 = new Persona('Juan','Perez');
+
+console.log(persona1.toString())
+
+
+let empleado1 = new Empleado('maria','jimenez', 'TIC');
+console.log(empleado1.toString())
+
+console.log(Persona.contadorPersonas)
+
+let persona2 = new Persona ( 'Karla' , 'Ramirez')
+console.log(persona2.toString())
+console.log(Persona.contadorPersonas)
+
+console.log(Persona.MAX_OBJ)
+Persona.MAX_OBJ = 30; //No se puede ya que es constante
+
+let persona3 = new Persona('Mariano','lara')
+let persona4 = new Persona('Tanana', 'Tnanana')
+console.log(Persona.contadorPersonas)
+let persona5 = new Persona('jdfn' , '3edw')
+console.log(persona5.toString())
