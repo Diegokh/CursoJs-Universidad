@@ -1,24 +1,13 @@
 # Node
 node_modules/
+**/node_modules/
 
-# Build
+# Builds / compilados
+*.map
+*.js
+*.d.ts
 dist/
 build/
-
-# Webpack
-*.map
-
-# TypeScript
-*.tsbuildinfo
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# OS
-.DS_Store
-Thumbs.db
 
 # Editor
 .vscode/

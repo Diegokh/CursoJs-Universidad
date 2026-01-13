@@ -1,1 +1,1 @@
-{"version":3,"file":"decoradores.js","sourceRoot":"","sources":["decoradores.ts"],"names":[],"mappings":";;;;;;AAAA,SAAS,OAAO,CAAC,MAAgB;IAC7B,MAAM,CAAC,SAAS,CAAC,OAAO,GAAG;QACvB,OAAO,CAAC,GAAG,CAAC,wBAAwB,CAAC,CAAC;IAC1C,CAAC,CAAA;AACL,CAAC;AAGD,IAAM,IAAI,GAAV,MAAM,IAAI;IACN;IAEA,CAAC;CACJ,CAAA;AAJK,IAAI;IADT,OAAO;GACF,IAAI,CAIT;AAED,IAAI,KAAK,GAAG,IAAI,IAAI,EAAE,CAAC;AACvB,KAAK,CAAC,OAAO,EAAE,CAAC"}
+{"version":3,"file":"decoradores.js","sourceRoot":"","sources":["decoradores.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;;;EAgBE"}
